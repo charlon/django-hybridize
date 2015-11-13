@@ -5,7 +5,7 @@ Installation
 
   $ pip install -e git+https://github.com/charlon/django-hybridize/#egg=hybridize
 
-Setup 
+settings.py 
 
-  Add 'hybridize' to settings.py
+  Add 'hybridize' to INSTALLED_APPS
 
