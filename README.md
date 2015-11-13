@@ -1,7 +1,11 @@
 # django-hybridize
 Django plugin app that allows apps to be consumed in native-hybrid mobile apps.
 
-'''pip install -e git+https://github.com/charlon/django-hybridize/#egg=hybridize
+Installation
 
-Add 'hybridize' to settings.py
+  $ pip install -e git+https://github.com/charlon/django-hybridize/#egg=hybridize
+
+Setup 
+
+  Add 'hybridize' to settings.py
 
