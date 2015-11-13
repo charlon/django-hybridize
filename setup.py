@@ -14,6 +14,9 @@ setup(
     install_requires = [
         'setuptools',
         'django',
+        'django-compressor',
+        'django_mobileesp',
+        'libsass',
     ],
     license='Apache License, Version 2.0',  # example license
     description='Django plugin that allows apps to be consumed in native-hybrid mobile apps.',
