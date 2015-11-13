@@ -9,3 +9,10 @@ settings.py
 
   Add 'hybridize' to INSTALLED_APPS
 
+In your project/app...
+
+Standalone hybrid app
+
+  just extend the hybridize base template using hybrid_content block
+  
+Addaptive hybrid app
