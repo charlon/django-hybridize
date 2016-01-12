@@ -16,7 +16,7 @@ setup(
         'django',
         'django-compressor',
         'django_mobileesp',
-        'libsass',
+        'pyscss',
     ],
     license='Apache License, Version 2.0',  # example license
     description='Django plugin that allows apps to be consumed in native-hybrid mobile apps.',
