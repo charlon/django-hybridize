@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>{% block title %}Scout{% endblock %}</title>
+        <title>{% block title %}Django Hybridize{% endblock %}</title>
         <meta name="description" content="">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
@@ -12,6 +12,9 @@
 
         {% load staticfiles %}
         {% load compress %}
+
+        <!-- http://realfavicongenerator.net/ -->
+        <!-- generate favicon files to avoid server errors being thrown when requested -->
 
         {% if request.is_and %}
 
@@ -25,8 +28,8 @@
 
             {% compress js %}
             <!-- javascript -->
-		    <script type="text/javascript" src="{% static "hybridize/js/jquery-2.1.4.min.js" %}"></script>
-                    <script type="text/javascript" src="{% static "hybridize/js/turbolinks-5.0.0.min.js" %}"></script>
+		    <script type="text/javascript" src="{% static "hybridize/js/jquery-3.2.1.min.js" %}"></script>
+            <script type="text/javascript" src="{% static "hybridize/js/turbolinks-5.0.3.min.js" %}"></script>
 		    <script type="text/javascript" src="{% static "hybridize/js/framework7.min.js" %}"></script>
 		    <!-- local override files -->
 		    <script type="text/javascript" src="{% static "hybridize/js/android.js" %}"></script>
@@ -46,8 +49,8 @@
 
             {% compress js %}
             <!-- javascript -->
-		    <script type="text/javascript" src="{% static "hybridize/js/jquery-2.1.4.min.js" %}"></script>
-            <script type="text/javascript" src="{% static "hybridize/js/turbolinks-5.0.0.min.js" %}"></script>
+		    <script type="text/javascript" src="{% static "hybridize/js/jquery-3.2.1.min.js" %}"></script>
+            <script type="text/javascript" src="{% static "hybridize/js/turbolinks-5.0.3.min.js" %}"></script>
 		    <script type="text/javascript" src="{% static "hybridize/js/framework7.min.js" %}"></script>
 		    <!-- local override files -->
 		    <script type="text/javascript" src="{% static "hybridize/js/ios.js" %}"></script>
@@ -59,28 +62,21 @@
 
     <body class="theme-custom">
 
-    <div class="views">
-        <div class="view view-main">
-            <div class="pages">
-                <div class="page">
-                    <div class="page-content" style="position: relative;">
-                    {% block hybrid_content %}{% endblock %}
-                    </div>
-                </div>
-            </div>
+        <div class="hybrid-container">
+        {% block hybrid_content %}{% endblock %}
         </div>
-    </div>
 
-    {% compress js inline %}
-    <script>
-    var links = document.getElementsByTagName('link');
-    for(var i = 0; i < links.length; i++){
-        var link = links[i];
-        if(link.getAttribute('media') === 'only foo')
-            link.setAttribute('media', 'all');
-    }
-    </script>
-    {% endcompress %}
+        <!-- technique to asynchronously load css -->
+        {% compress js inline %}
+        <script>
+        var links = document.getElementsByTagName('link');
+        for(var i = 0; i < links.length; i++){
+            var link = links[i];
+            if(link.getAttribute('media') === 'only foo')
+                link.setAttribute('media', 'all');
+        }
+        </script>
+        {% endcompress %}
 
     </body>
 
