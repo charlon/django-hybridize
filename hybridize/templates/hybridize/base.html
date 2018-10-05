@@ -12,11 +12,12 @@
 
         {% load staticfiles %}
         {% load compress %}
+        {% load user_agents %}
 
         <!-- http://realfavicongenerator.net/ -->
         <!-- generate favicon files to avoid server errors being thrown when requested -->
 
-        {% if request.is_and %}
+        {% if request.user_agent.os.family == 'Android' %}
 
             <!-- framework7 material -->
             <link rel="stylesheet" media="only foo" type="text/css" href="{% static "hybridize/css/framework7.material.min.css" %}">
@@ -37,7 +38,7 @@
 
         {% endif %}
 
-        {% if request.is_ios %}
+        {% if request.user_agent.os.family == 'iOS' %}
 
         	<!-- framework7 ios -->
             <link rel="stylesheet" media="only foo" type="text/css" href="{% static "hybridize/css/framework7.ios.min.css" %}">

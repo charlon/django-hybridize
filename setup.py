@@ -15,8 +15,11 @@ setup(
         'setuptools',
         'django',
         'django-compressor',
-        'django_mobileesp',
         'pyscss',
+        'pyyaml',
+        'ua-parser',
+        'user-agents',
+        'django-user-agents'
     ],
     license='Apache License, Version 2.0',  # example license
     description='Django plugin that allows apps to be consumed in native-hybrid mobile apps.',
